@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "example_notice": "بيانات اصطناعية لا تمثل منهاجاً أردنياً رسمياً؛ تتضمن عجزاً وفجوة تقويم مقصودين للاختبار.",
+  "reference_complete": false,
+  "sources": [],
+  "outcomes": [
+    {
+      "id": "O1",
+      "text": "يقارن الطالب قراءتين بالاستناد إلى بيانات.",
+      "required": true,
+      "provenance": "proposed",
+      "source_id": null
+    },
+    {
+      "id": "O2",
+      "text": "يبرر الطالب قراراً باستخدام بيانات مقارنة.",
+      "required": true,
+      "provenance": "proposed",
+      "source_id": null
+    }
+  ],
+  "time": {
+    "basis": "gross",
+    "weeks": 4,
+    "periods_per_week": 3,
+    "losses": [
+      {
+        "reason": "انقطاع مفترض للاختبار",
+        "periods": 2,
+        "source": "افتراض اصطناعي"
+      }
+    ],
+    "reserve_periods": 1
+  },
+  "units": [
+    {
+      "id": "U1",
+      "periods": 5,
+      "outcome_ids": [
+        "O1"
+      ]
+    },
+    {
+      "id": "U2",
+      "periods": 6,
+      "outcome_ids": [
+        "O2"
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "A1",
+      "title": "مقارنة بيانات",
+      "unit_id": "U1",
+      "outcome_ids": [
+        "O1"
+      ]
+    },
+    {
+      "id": "A2",
+      "title": "اختيار بديل وتعليل",
+      "unit_id": "U2",
+      "outcome_ids": [
+        "O2"
+      ]
+    }
+  ],
+  "assessments": [
+    {
+      "id": "Q1",
+      "title": "سؤال مقارنة فردي",
+      "unit_id": "U1",
+      "outcome_ids": [
+        "O1"
+      ],
+      "success_criteria": "مقارنة صحيحة مدعومة بقيمتين من الجدول."
+    }
+  ]
+}
