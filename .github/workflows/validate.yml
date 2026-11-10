@@ -1,0 +1,23 @@
+name: Validate skill
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Run arithmetic and data checks
+        run: python -m unittest discover -s jordan-curriculum-planning/evals -p 'test_*.py' -v
+      - name: Rebuild uploadable skill
+        run: python tools/build_release.py
+      - name: Verify committed archive matches source
+        run: git diff --exit-code -- dist/jordan-curriculum-planning.zip
